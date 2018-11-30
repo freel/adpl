@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+use App\JobHistory;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +15,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/', 'DownloadApiController@index')->name("api.index");
+Route::post('/', 'DownloadApiController@store')->name("api.store");

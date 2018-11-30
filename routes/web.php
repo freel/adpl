@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DownloadController@index')->name("index");
+Route::post('/', 'DownloadController@store')->name("store");
